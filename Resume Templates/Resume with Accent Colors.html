@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Resume</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            margin: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            max-width: 850px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: #ff6f61;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .header p {
+            margin: 5px 0;
+            font-size: 1em;
+        }
+        .section {
+            padding: 20px;
+        }
+        .section h2 {
+            font-size: 1.7em;
+            color: #ff6f61;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .section h2::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: #ff6f61;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .section ul li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .section ul li::before {
+            content: '•';
+            color: #ff6f61;
+            position: absolute;
+            left: 0;
+        }
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .section h2 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Alex Johnson</h1>
+            <p>Graphic Designer | alex.johnson@email.com | (555) 123-4567 | Los Angeles, CA</p>
+            <p><a href="https://behance.net/alexjohnson" style="color: #fff;">Behance</a> | <a href="https://dribbble.com/alexjohnson" style="color: #fff;">Dribbble</a></p>
+        </div>
+        <div class="section">
+            <h2>About Me</h2>
+            <p>Creative Graphic Designer with a passion for crafting visually stunning designs. Experienced in branding, UI/UX, and print media, with a keen eye for detail and a commitment to client satisfaction.</p>
+        </div>
+        <div class="section">
+            <h2>Work Experience</h2>
+            <ul>
+                <li>
+                    <strong>Senior Graphic Designer, Creative Studio</strong> — Los Angeles, CA<br>
+                    March 2019 - Present<br>
+                    - Designed branding materials for 20+ clients, increasing brand recognition by 25%.<br>
+                    - Led UI/UX design for mobile app interfaces.
+                </li>
+                <li>
+                    <strong>Graphic Designer, Design Hub</strong> — San Diego, CA<br>
+                    July 2016 - February 2019<br>
+                    - Created marketing collateral for print and digital campaigns.<br>
+                    - Collaborated with marketing teams to align designs with brand guidelines.
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <strong>B.F.A. in Graphic Design, CalArts</strong> — Valencia, CA<br>
+                    Graduated: May 2016
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Skills</h2>
+            <ul>
+                <li>Adobe Photoshop, Illustrator, InDesign</li>
+                <li>Figma, Sketch, UI/UX Design</li>
+                <li>Typography, Branding, Print Design</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

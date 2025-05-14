@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Column Professional Resume</title>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            margin: 0;
+            background-color: #e9ecef;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            display: flex;
+            background: #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+        .sidebar {
+            width: 30%;
+            background: #343a40;
+            color: #fff;
+            padding: 20px;
+        }
+        .main-content {
+            width: 70%;
+            padding: 20px;
+        }
+        .sidebar h1 {
+            font-size: 2em;
+            margin: 0 0 20px;
+        }
+        .sidebar p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        .sidebar h3 {
+            font-size: 1.2em;
+            margin-top: 20px;
+            border-bottom: 1px solid #fff;
+        }
+        .main-content h2 {
+            font-size: 1.8em;
+            color: #343a40;
+            border-bottom: 2px solid #343a40;
+            margin-bottom: 10px;
+        }
+        .main-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .main-content ul li {
+            margin-bottom: 15px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar, .main-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1>Jane Smith</h1>
+            <p>Data Scientist</p>
+            <p>jane.smith@email.com</p>
+            <p>(987) 654-3210</p>
+            <p>San Francisco, CA</p>
+            <p><a href="https://linkedin.com/in/janesmith" style="color: #fff;">LinkedIn</a></p>
+            <h3>Skills</h3>
+            <ul>
+                <li>Python, R, SQL</li>
+                <li>Machine Learning, TensorFlow</li>
+                <li>Data Visualization, Tableau</li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h2>Professional Summary</h2>
+            <p>Data Scientist with 6 years of experience in predictive modeling and data analysis. Skilled in leveraging machine learning to drive business insights and improve decision-making processes.</p>
+            <h2>Work Experience</h2>
+            <ul>
+                <li>
+                    <strong>Data Scientist, DataCorp</strong> — San Francisco, CA<br>
+                    January 2021 - Present<br>
+                    - Built machine learning models to predict customer churn with 85% accuracy.<br>
+                    - Automated data pipelines, reducing processing time by 40%.
+                </li>
+                <li>
+                    <strong>Data Analyst, Insight Analytics</strong> — Seattle, WA<br>
+                    June 2018 - December 2020<br>
+                    - Conducted A/B testing to optimize marketing campaigns.<br>
+                    - Created interactive dashboards using Tableau.
+                </li>
+            </ul>
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <strong>M.S. in Data Science, Stanford University</strong> — Stanford, CA<br>
+                    Graduated: May 2018
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
