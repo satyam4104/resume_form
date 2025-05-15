@@ -1,0 +1,20 @@
+body{
+    font-family: Arial sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+h2{
+    color: #333;
+}
+
+        img {
+            max-width: auto;
+            height: 500px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+        img:hover {
+            border-color: #007bff;
+            cursor: pointer;
+        }

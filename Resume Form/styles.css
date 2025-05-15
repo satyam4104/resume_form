@@ -1,1 +1,28 @@
  
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+
+}
+
+.container{
+    background-color: blue;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#formData{
+    background-color: red;
+}
