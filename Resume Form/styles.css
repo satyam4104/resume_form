@@ -16,13 +16,95 @@ body {
 
 }
 
+#heading{
+
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
 .container{
-    background-color: blue;
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
 }
 
 #formData{
-    background-color: red;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-size: .90rem;
+    font-weight: 200;
+    color: #2d3748;
+    margin-bottom: .5rem;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #2d3748;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+input::placeholder {
+    color: #a0aec0;
+}
+
+
+button[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button[type="submit"]:hover {
+    background-color: #2b6cb0;
+}
+
+button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+
+label[for="name"]::after,
+label[for="email"]::after,
+label[for="skill"]::after,
+label[for="phone_no"]::after,
+label[for= "address"]::after,
+label[for= "education"]::after,
+label[for="experience"]::after,
+label[for="project"]::after {
+    content: ' *';
+    color: #e53e3e;
+}
+

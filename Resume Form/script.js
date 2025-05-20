@@ -15,19 +15,19 @@ document.getElementById("formData").addEventListener("submit", function(event) {
         return;
     }
 
-    // Basic email validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address.");
-        return;
-    }
+    // // Basic email validation
+    // const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // if (!emailPattern.test(email)) {
+    //     alert("Please enter a valid email address.");
+    //     return;
+    // }
 
-    // Basic phone number validation (e.g., 10 digits)
-    const phonePattern = /^\d{10}$/;
-    if (!phonePattern.test(phone_no)) {
-        alert("Please enter a valid 10-digit phone number.");
-        return;
-    }
+    // // Basic phone number validation (e.g., 10 digits)
+    // const phonePattern = /^\d{10}$/;
+    // if (!phonePattern.test(phone_no)) {
+    //     alert("Please enter a valid 10-digit phone number.");
+    //     return;
+    // }
 
     // Store form data in localStorage for use in resume_selection.html
     const formData = { name, email, phone_no, address, education, skill, experience, project };
@@ -37,4 +37,6 @@ document.getElementById("formData").addEventListener("submit", function(event) {
 
     // Redirect to resume_selection.html
     window.location.href = "new_tab.html";
+        
+
 });

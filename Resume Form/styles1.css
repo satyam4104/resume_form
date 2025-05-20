@@ -9,8 +9,8 @@ h2{
 }
 
         img {
-            max-width: auto;
-            height: 500px;
+            width: 200px;
+            height: 200px;
             border: 2px solid #ccc;
             border-radius: 5px;
         }
@@ -18,3 +18,12 @@ h2{
             border-color: #007bff;
             cursor: pointer;
         }
+
+.templates{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
