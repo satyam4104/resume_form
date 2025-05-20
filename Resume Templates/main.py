@@ -45,9 +45,9 @@ async def SendData( data: ResumeFormData):
 
 async def summary(data: ResumeFormData):
     url = "http://127.0.0.1:11434/api/generate"
-    prompt = f"Provide only a summary. You have to give some content and provide Professional Summary for resume making from provided information. The given information are: Name: {data.name}, Education: {data.education}, work experience: {data.experience}, Skills:{data.skill}."
+    prompt = f"Define professional summary in few line of provide information. The given information are: Name: {data.name}, Education: {data.education}, work experience: {data.experience}, Skills:{data.skill}."
     payload = {
-        "model" :"resume_assistance",
+        "model" :"llama3.2:1b",
         "prompt" : prompt,
         "stream" : False
     }
@@ -59,6 +59,17 @@ async def summary(data: ResumeFormData):
 
         return {"status": "Response received", "ollama_response": response.json()}
         
+
+
+
+
+
+
+
+
+
+
+
 
 
 
