@@ -47,11 +47,11 @@
 
         const result = await response.json();
         console.log("Response from server: ", result);
-        alert("Data sent successfully!");
+        alert("Data sent successfully! For data tranfer");
 
     } catch (error) {
         console.error("Error: ", error);
-        alert("An error occurred while sending data to the FastAPI server.");
+        alert("An error occurred while sending data to the FastAPI server. For data tranfer");
     }
 
     try {
@@ -64,7 +64,7 @@
             keepalive: true
          });
 
-         console.log("Response: ", response);
+         console.log("Response for summary: ", response);
          
 
         if(!response.ok) {
@@ -72,16 +72,109 @@
         }
 
         const result = await response.json();
-        console.log("Response from server: ", result);
-        console.log("Response from ollama: ", result.ollama_response.response);
+        console.log("Response from server for summary: ", result);
+        console.log("Response from ollama for summary: ", result.ollama_response.response);
         document.getElementById("Summary").textContent = result.ollama_response.response 
-        alert("Data sent successfully!");
+        alert("Data sent successfully! For summary");
         
 
         } catch (error) {
             console.error("Error: ", error);
-            alert("An error occurred while sending data to the FastAPI server.");
+            alert("An error occurred while sending data to the FastAPI server for summary.");
         }
+
+
+        try {
+            const response = await fetch("http://10.224.1.107:8000/work_experience",{
+                method: "POST",
+                headers : {
+                "content-type": "application/json"
+            },            
+                body: JSON.stringify(formdata),
+                keepalive: true
+            });
+
+            console.log("Responce for work experience: ", response)
+
+            if(!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+
+            }
+
+            const result = await response.json();
+            console.log("Response from server for work experience: ", result);
+            console.log("Response from ollama for work experience: ", result.ollama_response.response);
+            document.getElementById("work").textContent = result.ollama_response.response 
+            alert("Data sent successfully! For work experience");
+            
+
+            } catch (error) {
+                console.error("Error: ", error);
+                alert("An error occurred while sending data to the FastAPI server for work experience.");
+            }
+
+
+
+            
+        try {
+            const response = await fetch("http://10.224.1.107:8000/education",{
+                method: "POST",
+                headers : {
+                "content-type": "application/json"
+            },                 
+                body: JSON.stringify(formdata),
+                keepalive: true
+            });
+
+            console.log("Responce for education: ", response)
+
+            if(!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+
+            }
+
+            const result = await response.json();
+            console.log("Response from server for education: ", result);
+            console.log("Response from ollama for education: ", result.ollama_response.response);
+            document.getElementById("education").textContent = result.ollama_response.response 
+            alert("Data sent successfully! For education");
+            
+
+            } catch (error) {
+                console.error("Error: ", error);
+                alert("An error occurred while sending data to the FastAPI server for education.");
+            }
+
+            
+        try {
+            const response = await fetch("http://10.224.1.107:8000/skill_project",{
+                method: "POST",
+                headers : {
+                "content-type": "application/json"
+            },                 
+                body: JSON.stringify(formdata),
+                keepalive: true
+            });
+
+            console.log("Responce for Skill and projects: ", response)
+
+            if(!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+
+            }
+
+            const result = await response.json();
+            console.log("Response from server for Skill and projects: ", result);
+            console.log("Response from ollama for Skill and projects: ", result.ollama_response.response);
+            document.getElementById("skill").textContent = result.ollama_response.response 
+            alert("Data sent successfully! For Skill and projects");
+            
+
+            } catch (error) {
+                console.error("Error: ", error);
+                alert("An error occurred while sending data to the FastAPI server for Skill and projects.");
+            }
+        
     }
 
 

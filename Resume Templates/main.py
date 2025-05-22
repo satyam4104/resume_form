@@ -60,13 +60,62 @@ async def summary(data: ResumeFormData):
         return {"status": "Response received", "ollama_response": response.json()}
         
 
+@app.post("/work_experience")
+
+async def summary(data: ResumeFormData):
+    url = "http://127.0.0.1:11434/api/generate"
+    prompt = f"Generate a work experience summary to fit in resume format from provided information. The given information are: work experience: {data.experience}, Skills:{data.skill}."
+    payload = {
+        "model" :"llama3.2:1b",
+        "prompt" : prompt,
+        "stream" : False
+    }
+    
+    async with httpx.AsyncClient() as client:
+        response = await client.post(url, json=payload, timeout=timeout)
+        print(response)
+        print(response.text)
+
+        return {"status": "Response received", "ollama_response": response.json()}
 
 
 
+@app.post("/education")
+
+async def summary(data: ResumeFormData):
+    url = "http://127.0.0.1:11434/api/generate"
+    prompt = f"Define summary in resume format for education details. The given education details are: Name: {data.name}, Education: {data.education}."
+    payload = {
+        "model" :"llama3.2:1b",
+        "prompt" : prompt,
+        "stream" : False
+    }
+    
+    async with httpx.AsyncClient() as client:
+        response = await client.post(url, json=payload, timeout=timeout)
+        print(response)
+        print(response.text)
+
+        return {"status": "Response received", "ollama_response": response.json()}
 
 
+@app.post("/skill_project")
 
+async def summary(data: ResumeFormData):
+    url = "http://127.0.0.1:11434/api/generate"
+    prompt = f"Give summary of projects and showcase the skill develop through these projects. The given information are:  work experience: {data.experience}, Skills:{data.skill}, Projects: {data.project}."
+    payload = {
+        "model" :"llama3.2:1b",
+        "prompt" : prompt,
+        "stream" : False
+    }
+    
+    async with httpx.AsyncClient() as client:
+        response = await client.post(url, json=payload, timeout=timeout)
+        print(response)
+        print(response.text)
 
+        return {"status": "Response received", "ollama_response": response.json()}
 
 
 
