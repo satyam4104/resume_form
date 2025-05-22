@@ -47,7 +47,7 @@
 
         const result = await response.json();
         console.log("Response from server: ", result);
-        alert("Data sent successfully! For data tranfer");
+        // alert("Data sent successfully! For data tranfer");
 
     } catch (error) {
         console.error("Error: ", error);
@@ -75,7 +75,7 @@
         console.log("Response from server for summary: ", result);
         console.log("Response from ollama for summary: ", result.ollama_response.response);
         document.getElementById("Summary").textContent = result.ollama_response.response 
-        alert("Data sent successfully! For summary");
+        // alert("Data sent successfully! For summary");
         
 
         } catch (error) {
@@ -105,7 +105,7 @@
             console.log("Response from server for work experience: ", result);
             console.log("Response from ollama for work experience: ", result.ollama_response.response);
             document.getElementById("work").textContent = result.ollama_response.response 
-            alert("Data sent successfully! For work experience");
+            // alert("Data sent successfully! For work experience");
             
 
             } catch (error) {
@@ -137,7 +137,7 @@
             console.log("Response from server for education: ", result);
             console.log("Response from ollama for education: ", result.ollama_response.response);
             document.getElementById("education").textContent = result.ollama_response.response 
-            alert("Data sent successfully! For education");
+            // alert("Data sent successfully! For education");
             
 
             } catch (error) {
@@ -167,7 +167,7 @@
             console.log("Response from server for Skill and projects: ", result);
             console.log("Response from ollama for Skill and projects: ", result.ollama_response.response);
             document.getElementById("skill").textContent = result.ollama_response.response 
-            alert("Data sent successfully! For Skill and projects");
+            // alert("Data sent successfully! For Skill and projects");
             
 
             } catch (error) {
