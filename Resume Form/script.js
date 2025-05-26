@@ -1,4 +1,4 @@
-document.getElementById("formData").addEventListener("submit", function(event) {
+document.getElementById("formData").addEventListener("submit", async function(event) {
     event.preventDefault();
 
     const name = document.getElementById("name").value.trim();
@@ -30,7 +30,38 @@ document.getElementById("formData").addEventListener("submit", function(event) {
     // }
 
     // Store form data in localStorage for use in resume_selection.html
+
+
     const formData = { name, email, phone_no, address, education, skill, experience, project };
+
+    try{
+        const response = await fetch("http://10.224.1.107:8001/save_data_to_MongDB", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData),
+            keepalive: true
+        });
+
+        console.log("Response form mongDB fastapi: ", response);
+        console.log("Response form mongDB fastapi in json format: ", response.json);
+
+        if (!response.ok){
+            throw new  Error(`HTTP error! Status: ${response.status}`);
+
+        }
+
+        const result = response.json();
+        console.log("Response from server: ", result)
+    }catch (error){
+        console.error("Error: ", error);
+        alert("An error occurred while sending data to the FastAPI server and mongoDB. For data tranfer");
+    
+    }
+
+
+    
     localStorage.setItem("resumeFormData", JSON.stringify(formData));
 
     console.log("Form Data:", formData);

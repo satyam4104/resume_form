@@ -5,7 +5,7 @@ from typing import Optional, List
 import uvicorn
 import httpx
 
-timeout = 50.0
+timeout = 70.0
 
 app = FastAPI()
 
