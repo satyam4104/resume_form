@@ -122,3 +122,31 @@ label[for="project"]::after {
             padding-bottom: 20px;
             margin-bottom: 20px;
         }
+
+
+
+
+
+
+
+
+
+.skills-container {
+    margin-bottom: 10px;
+}
+.skill-button {
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 2px;
+    cursor: pointer;
+}
+.skill-button.selected {
+    background-color: #4CAF50;
+    color: white;
+}
+.selected-skills {
+    margin-top: 10px;
+    font-style: italic;
+}

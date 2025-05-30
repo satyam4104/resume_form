@@ -32,10 +32,30 @@
                 <label for="education">Education Details:</label>
                 <input type="text" id="education" name="education" required>
             </p>
-            <p>
+            <!-- <p>
                 <label for="skill">Skills:</label>
                 <input type="text" id="skill" name="skill" required>
+            </p> -->
+
+            <p>
+            <label for="skill">Skills:</label>
+            <div class="skills-container">
+                <button type="button" class="skill-button" data-skill="JavaScript">JavaScript</button>
+                <button type="button" class="skill-button" data-skill="Python">Python</button>
+                <button type="button" class="skill-button" data-skill="Leadership">Leadership</button>
+                <button type="button" class="skill-button" data-skill="Hard Working">Hard Working</button> 
+                <button type="button" class="skill-button" data-skill="Good Communication">Good Communication</button>
+ 
+            </div>
+            <input type="text" id="customSkill" placeholder="Enter custom skill">
+            <br>
+            <br>
+            <button type="button" id="addCustomSkill" >Add Custom Skill</button>
+            <div class="selected-skills" id="selectedSkillsDisplay">Selected skills: None</div>
+            <input type="hidden" id="skill" name="skill" value="">
             </p>
+
+
             <p>
                 <label for="experience">Experience:</label>
                 <input type="text" id="experience" name="experience" required>

@@ -129,4 +129,61 @@ document.getElementById("formData").addEventListener("submit", async function(ev
 });
 
 
+// Initialize an array to store selected skills
+let selectedSkills = [];
 
+// Update the hidden input and display
+function updateSkills() {
+    // Update hidden input with comma-separated skills
+    document.getElementById('skill').value = selectedSkills.join(', ');
+    // Update display
+    const display = document.getElementById('selectedSkillsDisplay');
+    display.textContent = selectedSkills.length > 0 
+        ? 'Selected skills: ' + selectedSkills.join(', ')
+        : 'Selected skills: None';
+}
+
+// Handle predefined skill button clicks
+document.querySelectorAll('.skill-button').forEach(button => {
+
+    button.addEventListener('click', function() {
+        const skill = this.getAttribute('data-skill');
+        if (!selectedSkills.includes(skill)) {
+            // Add skill and mark button as selected
+            selectedSkills.push(skill);
+            this.classList.add('selected');
+        } else {
+            // Remove skill and unmark button
+            selectedSkills = selectedSkills.filter(s => s !== skill);
+            this.classList.remove('selected');
+        }
+        updateSkills();
+    });
+});
+
+// Handle custom skill addition
+document.getElementById('addCustomSkill').addEventListener('click', function() {
+    const customSkillInput = document.getElementById('customSkill');
+    const skill = customSkillInput.value.trim();
+    if (skill && !selectedSkills.includes(skill)) {
+        selectedSkills.push(skill);
+        customSkillInput.value = ''; // Clear input
+        updateSkills();
+    }
+});
+
+// Allow pressing Enter to add custom skill
+document.getElementById('customSkill').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        document.getElementById('addCustomSkill').click();
+    }
+});
+
+// Handle form submission (for demonstration)
+document.getElementById('skillsForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Submitted skills: ' + document.getElementById('skill').value);
+});
+
+console.log(selectedSkills);
