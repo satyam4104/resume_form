@@ -239,3 +239,55 @@ console.log(experiences);
 });
 
            
+
+
+
+
+document.getElementById("AddEducation").addEventListener("click", function()
+{
+
+    const Academy = document.getElementById("Academy").value;
+    const startyear = document.getElementById("startyear").value;
+    const endyear = document.getElementById("endyear").value;
+    const percentage = document.getElementById("percentage").value||'Present';
+
+    const edu={
+        Academy,
+        startyear,
+        endyear,
+        percentage
+    }
+
+            // Get existing data from hidden input or initialize empty array
+            const hiddenInput = document.getElementById('education');
+            let educations = hiddenInput.value ? JSON.parse(hiddenInput.value) : [];
+
+            // Add new experience to array
+            educations.push(edu);
+
+            // Update hidden input with JSON string
+            hiddenInput.value = JSON.stringify(educations);
+
+            // Generate output for display
+            const output = educations.map((exp, index) => `
+            <br>
+                <h3>Education ${index + 1}</h3>
+                <br>
+                <p><strong>Acedamy:</strong> ${exp.Academy}</p>
+                <p><strong>Percentage:</strong> ${exp.percentage}</p>
+                <p><strong>From:</strong> ${exp.startyear}</p>
+                <p><strong>Till:</strong> ${exp.endyear}</p>
+            `).join('');
+
+            document.getElementById('Education-output').innerHTML = output;
+
+            // Reset form inputs (except hidden field)
+            document.getElementById('Academy').value = '';
+            document.getElementById('percentage').value = '';
+            document.getElementById('startyear').value = '';
+            document.getElementById('endyear').value = '';
+
+console.log(hiddenInput);
+console.log(educations);
+
+});
