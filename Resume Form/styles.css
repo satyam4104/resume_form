@@ -132,6 +132,7 @@ label[for="project"]::after {
 
 
 .skills-container {
+    
     margin-bottom: 10px;
 }
 .skill-button {
@@ -150,3 +151,30 @@ label[for="project"]::after {
     margin-top: 10px;
     font-style: italic;
 }
+
+.experience-container{
+            /* background-color: #f9f9f9; */
+            padding: 10px;
+            border-radius: 8px;
+            /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */
+}
+
+
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button[id="experience"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }

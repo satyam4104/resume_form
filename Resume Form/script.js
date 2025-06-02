@@ -30,6 +30,7 @@ document.getElementById("formData").addEventListener("submit", async function(ev
     // }
 
     // Store form data in localStorage for use in resume_selection.html
+    console.log("experice updated: ",experience);
 
 
     const formData = { name, email, phone_no, address, education, skill, experience, project };
@@ -181,9 +182,60 @@ document.getElementById('customSkill').addEventListener('keypress', function(e) 
 });
 
 // Handle form submission (for demonstration)
-document.getElementById('skillsForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Submitted skills: ' + document.getElementById('skill').value);
-});
+// document.getElementById('skillsForm').addEventListener('submit', function(e) {
+//     e.preventDefault();
+//     alert('Submitted skills: ' + document.getElementById('skill').value);
+// });
 
 console.log(selectedSkills);
+
+
+document.getElementById("AddExperience").addEventListener("click", function()
+{
+            const institute = document.getElementById('institute').value;
+            const position = document.getElementById('position').value;
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value || 'Present';
+
+            // Create experience object
+            const experience = {
+                institute,
+                position,
+                startDate,
+                endDate
+            };
+
+            // Get existing data from hidden input or initialize empty array
+            const hiddenInput = document.getElementById('experience');
+            let experiences = hiddenInput.value ? JSON.parse(hiddenInput.value) : [];
+
+            // Add new experience to array
+            experiences.push(experience);
+
+            // Update hidden input with JSON string
+            hiddenInput.value = JSON.stringify(experiences);
+
+            // Generate output for display
+            const output = experiences.map((exp, index) => `
+            <br>
+                <h3>Experience ${index + 1}</h3>
+                <br>
+                <p><strong>Institute/Company:</strong> ${exp.institute}</p>
+                <p><strong>Position:</strong> ${exp.position}</p>
+                <p><strong>From:</strong> ${exp.startDate}</p>
+                <p><strong>Till:</strong> ${exp.endDate}</p>
+            `).join('');
+
+            document.getElementById('experience-output').innerHTML = output;
+
+            // Reset form inputs (except hidden field)
+            document.getElementById('institute').value = '';
+            document.getElementById('position').value = '';
+            document.getElementById('startDate').value = '';
+            document.getElementById('endDate').value = '';
+
+console.log(hiddenInput);
+console.log(experiences);
+});
+
+           

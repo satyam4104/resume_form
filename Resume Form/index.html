@@ -55,11 +55,35 @@
             <input type="hidden" id="skill" name="skill" value="">
             </p>
 
-
             <p>
+                <label for="experience">Previous Work Experience</label>
+                <div class="experience-container">
+                    <label for="institute">Institute Worked Before or Currently Working</label>
+                    <input type="text" id="institute" name="institute" >
+
+                    <label for="position">Position</label>
+                    <input type="text" id="position" name="position" >
+
+                    <label for="startDate">From:</label>
+                    <input type="date" id="startDate" name="startDate" >
+
+                    <label for="endDate">Till:</label>
+                    <input type="date" id="endDate" name="endDate" >
+
+                    <input type="hidden" id="experience" name="experience">
+
+                    <button type="button" id="AddExperience">Add Experience</button>
+
+                    <div id="experience-output"></div>
+
+                </div>
+            </p>
+
+
+            <!-- <p>
                 <label for="experience">Experience:</label>
                 <input type="text" id="experience" name="experience" required>
-            </p>
+            </p> -->
             <p>
                 <label for="project">Projects Worked On:</label>
                 <input type="text" id="project" name="project" required>
@@ -72,4 +96,10 @@
 
     
 <script src="script.js"></script>
+
+
+
+
     
+</body>
+</html>
