@@ -64,30 +64,62 @@
             .section h2 {
                 font-size: 1.5em;
             }
+
         }
+
+
+                /* Full-page loader overlay */
+        .loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5); /* Slight blur effect */
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Loader animation */
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1 id="name">John Doe</h1>
+            <h1 id="name"></h1>
                 <p>
-                <span id="jobTitle">Software Engineer</span> | 
-                <span id="email">john.doe@email.com</span> | 
-                <span id="phone">(123) 456-7890</span> | 
-                <span id="location">New York, NY</span>
+                <!-- <span id="jobTitle"></span> |  -->
+                <span id="email"></span> | 
+                <span id="phone"></span> | 
+                <span id="location"></span>
                 </p>
 
             <!-- <p><a href="https://linkedin.com/in/johndoe">LinkedIn</a> | <a href="https://github.com/johndoe">GitHub</a></p> -->
         </div>
         <div class="section">
             <h2>Professional Summary</h2>
-            <p id="Summary">Detail-oriented Software Engineer with 5+ years of experience in developing scalable web applications using JavaScript, Python, and Java. Proficient in Agile methodologies and passionate about delivering high-quality code.</p>
+            <p id="Summary"></p>
         </div>
         <div class="section">
             <h2 >Work Experience</h2>
             <ul id="work">
-                <li >
+                <!-- <li >
                     <strong>Senior Software Engineer, Tech Corp</strong> — New York, NY<br>
                     June 2020 - Present<br>
                     - Led a team of 5 developers in building a cloud-based SaaS platform.<br>
@@ -98,26 +130,44 @@
                     May 2018 - May 2020<br>
                     - Developed RESTful APIs using Node.js and Express.<br>
                     - Collaborated with UX designers to enhance user interfaces.
-                </li>
+                </li> -->
             </ul>
         </div>
         <div class="section">
             <h2>Education</h2>
             <ul id="education">
-                <li>
+                <!-- <li>
                     <strong>B.S. in Computer Science, MIT</strong> — Cambridge, MA<br>
                     Graduated: May 2018
-                </li>
+                </li> -->
             </ul>
         </div>
         <div class="section">
             <h2>Skills and Projects</h2>
             <ul id="skill">
-                <li>JavaScript, Python, Java, SQL</li>
+                <!-- <li>JavaScript, Python, Java, SQL</li>
                 <li>React, Node.js, Django, AWS</li>
-                <li>Agile Development, Git, CI/CD</li>
+                <li>Agile Development, Git, CI/CD</li> -->
             </ul>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Loader container -->
+    <div class="loader-overlay">
+        <div class="loader"></div>
+    </div>
+
     </div>
 
     <script src="resume1.js"></script>

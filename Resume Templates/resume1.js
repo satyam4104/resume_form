@@ -187,7 +187,9 @@ async function resume_creation_from_mongodb_data() {
 
     let name, email, phone_no, address, education, skill, experience, project, formData;
     let formdata;
-    
+    const isLoading = true;
+     const loader = document.getElementsByClassName('loader-overlay')[0];
+      loader.style.display = 'flex';
     try{
         const response = await fetch(`http://10.224.1.107:8001/get_latest_data_from_MongDB/${session_id}`,{
             method:"GET",
@@ -229,7 +231,7 @@ console.log("formData: ",formData);
 
         // Update DOM elements
         document.getElementById('name').textContent = formData.name || 'Full Name';
-        document.getElementById('jobTitle').textContent = 'Job Title';
+        // document.getElementById('jobTitle').textContent = 'Job Title';
         document.getElementById('email').textContent = formData.email || 'Email';
         document.getElementById('phone').textContent = formData.phone_no || 'Phone Number';
         document.getElementById('location').textContent = formData.address || 'Address';
@@ -354,6 +356,8 @@ console.log("formData: ",formData);
                 console.error("Error: ", error);
                 alert("An error occurred while sending data to the FastAPI server for Skill and projects.");
             }
+
+             loader.style.display = 'none';
 }
 
 resume_creation_from_mongodb_data()

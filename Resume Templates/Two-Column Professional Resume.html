@@ -62,30 +62,60 @@
                 width: 100%;
             }
         }
+
+                /* Full-page loader overlay */
+        .loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5); /* Slight blur effect */
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Loader animation */
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
         <div class="sidebar">
-            <h1 id="name">Jane Smith</h1>
-            <p id="jobTitle">Data Scientist</p>
-            <p id="email">jane.smith@email.com</p>
-            <p id="phone">(987) 654-3210</p>
-            <p id="location">San Francisco, CA</p>
+            <h1 id="name"></h1>
+            <!-- <p id="jobTitle">Data Scientist</p> -->
+            <p id="email"></p>
+            <p id="phone"></p>
+            <p id="location"></p>
             <!-- <p><a href="https://linkedin.com/in/janesmith" style="color: #fff;">LinkedIn</a></p> -->
             <h3>Skills and Projects</h3>
             <ul id="skill">
-                <li>Python, R, SQL</li>
+                <!-- <li>Python, R, SQL</li>
                 <li>Machine Learning, TensorFlow</li>
-                <li>Data Visualization, Tableau</li>
+                <li>Data Visualization, Tableau</li> -->
             </ul>
         </div>
         <div class="main-content">
             <h2>Professional Summary</h2>
-            <p id="Summary">Data Scientist with 6 years of experience in predictive modeling and data analysis. Skilled in leveraging machine learning to drive business insights and improve decision-making processes.</p>
+            <p id="Summary"></p>
             <h2>Work Experience</h2>
             <ul id="work">
-                <li>
+                <!-- <li>
                     <strong>Data Scientist, DataCorp</strong> — San Francisco, CA<br>
                     January 2021 - Present<br>
                     - Built machine learning models to predict customer churn with 85% accuracy.<br>
@@ -96,16 +126,22 @@
                     June 2018 - December 2020<br>
                     - Conducted A/B testing to optimize marketing campaigns.<br>
                     - Created interactive dashboards using Tableau.
-                </li>
+                </li> -->
             </ul>
             <h2>Education</h2>
             <ul id="education">
-                <li>
+                <!-- <li>
                     <strong>M.S. in Data Science, Stanford University</strong> — Stanford, CA<br>
                     Graduated: May 2018
-                </li>
+                </li> -->
             </ul>
         </div>
+
+    <!-- Loader container -->
+    <div class="loader-overlay">
+        <div class="loader"></div>
+    </div>
+    
     </div>
     <script src="resume1.js"></script>
 </body>

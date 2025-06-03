@@ -79,17 +79,45 @@
                 font-size: 1.4em;
             }
         }
+                /* Full-page loader overlay */
+        .loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5); /* Slight blur effect */
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Loader animation */
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1 id="name">Alex Johnson</h1>
+            <h1 id="name"></h1>
             <p>
-                <span id="jobTitle">Graphic Designer</span> |
-                <span id="email">alex.johnson@email.com</span> |
-                <span id="phone"> (555) 123-4567</span> |
-                <span id="location"> Los Angeles, CA</span>
+                <!-- <span id="jobTitle">Graphic Designer</span> | -->
+                <span id="email"></span> |
+                <span id="phone"> </span> |
+                <span id="location"></span>
 
             </p>
            
@@ -97,12 +125,12 @@
         </div>
         <div class="section">
             <h2>About Me</h2>
-            <p id="Summary">Creative Graphic Designer with a passion for crafting visually stunning designs. Experienced in branding, UI/UX, and print media, with a keen eye for detail and a commitment to client satisfaction.</p>
+            <p id="Summary"></p>
         </div>
         <div class="section">
             <h2>Work Experience</h2>
             <ul id="work">
-                <li>
+                <!-- <li>
                     <strong>Senior Graphic Designer, Creative Studio</strong> — Los Angeles, CA<br>
                     March 2019 - Present<br>
                     - Designed branding materials for 20+ clients, increasing brand recognition by 25%.<br>
@@ -113,26 +141,32 @@
                     July 2016 - February 2019<br>
                     - Created marketing collateral for print and digital campaigns.<br>
                     - Collaborated with marketing teams to align designs with brand guidelines.
-                </li>
+                </li> -->
             </ul>
         </div>
         <div class="section">
             <h2>Education</h2>
             <ul id="education">
-                <li>
+                <!-- <li>
                     <strong>B.F.A. in Graphic Design, CalArts</strong> — Valencia, CA<br>
                     Graduated: May 2016
-                </li>
+                </li> -->
             </ul>
         </div>
         <div class="section">
             <h2>Skills and Projects</h2>
             <ul id="skill">
-                <li>Adobe Photoshop, Illustrator, InDesign</li>
+                <!-- <li>Adobe Photoshop, Illustrator, InDesign</li>
                 <li>Figma, Sketch, UI/UX Design</li>
-                <li>Typography, Branding, Print Design</li>
+                <li>Typography, Branding, Print Design</li> -->
             </ul>
         </div>
+
+    <!-- Loader container -->
+    <div class="loader-overlay">
+        <div class="loader"></div>
+    </div>
+            
     </div>
     <script src="resume1.js"></script>
 </body>
