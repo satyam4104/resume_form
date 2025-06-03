@@ -187,9 +187,12 @@ async function resume_creation_from_mongodb_data() {
 
     let name, email, phone_no, address, education, skill, experience, project, formData;
     let formdata;
-    const isLoading = true;
-     const loader = document.getElementsByClassName('loader-overlay')[0];
-      loader.style.display = 'flex';
+    // const isLoading = true;
+    //  const loader = document.getElementsByClassName('loader-overlay')[0];
+    //   loader.style.display = 'flex';
+
+
+
     try{
         const response = await fetch(`http://10.224.1.107:8001/get_latest_data_from_MongDB/${session_id}`,{
             method:"GET",
@@ -237,6 +240,17 @@ console.log("formData: ",formData);
         document.getElementById('location').textContent = formData.address || 'Address';
 
 
+        const summaryLoader = document.getElementById('summary-loader');
+        const summaryContent = document.getElementById('Summary');
+        const workLoader = document.getElementById('work-loader');
+        const workContent = document.getElementById('work');
+
+        // Show loaders, hide content
+        summaryLoader.style.display = 'block';
+        summaryContent.classList.add('content-hidden');
+        workLoader.style.display = 'block';
+        workContent.classList.add('content-hidden');
+
     try{
         const response = await fetch("http://10.224.1.107:8000/summary",{
             method: "POST",
@@ -259,6 +273,9 @@ console.log("formData: ",formData);
         console.log("Response from ollama for summary: ", result.ollama_response.response);
         document.getElementById("Summary").textContent = result.ollama_response.response 
 
+        // Update content and hide loaders
+        summaryLoader.style.display = 'none';
+        summaryContent.classList.remove('content-hidden');
 
     }
     catch(error){
@@ -289,6 +306,9 @@ console.log("formData: ",formData);
             document.getElementById("work").textContent = result.ollama_response.response 
             // alert("Data sent successfully! For work experience");
             
+            workLoader.style.display = 'none';
+            summaryContent.classList.remove('content-hidden');
+            workContent.classList.remove('content-hidden');
 
             } catch (error) {
                 console.error("Error: ", error);
