@@ -242,14 +242,30 @@ console.log("formData: ",formData);
 
         const summaryLoader = document.getElementById('summary-loader');
         const summaryContent = document.getElementById('Summary');
+
         const workLoader = document.getElementById('work-loader');
         const workContent = document.getElementById('work');
+
+        const educationLoader = document.getElementById("education-loader");
+        const educationContent = document.getElementById("education");
+
+        const skillLoader = document.getElementById("skill-loader");
+        const skillContent = document.getElementById("skill");
 
         // Show loaders, hide content
         summaryLoader.style.display = 'block';
         summaryContent.classList.add('content-hidden');
+
         workLoader.style.display = 'block';
         workContent.classList.add('content-hidden');
+
+        educationLoader.style.display = 'block';
+        educationContent.classList.add("content-hidden");
+
+        skillLoader.style.display ='block';
+        skillContent.classList.add("content-hidden")
+    
+
 
     try{
         const response = await fetch("http://10.224.1.107:8000/summary",{
@@ -307,7 +323,6 @@ console.log("formData: ",formData);
             // alert("Data sent successfully! For work experience");
             
             workLoader.style.display = 'none';
-            summaryContent.classList.remove('content-hidden');
             workContent.classList.remove('content-hidden');
 
             } catch (error) {
@@ -340,6 +355,11 @@ console.log("formData: ",formData);
             console.log("Response from ollama for education: ", result.ollama_response.response);
             document.getElementById("education").textContent = result.ollama_response.response 
             // alert("Data sent successfully! For education");
+
+            educationLoader.style.display ="none";
+            educationContent.classList.remove("content-hidden");
+
+            
             
 
             } catch (error) {
@@ -370,6 +390,10 @@ console.log("formData: ",formData);
             console.log("Response from ollama for Skill and projects: ", result.ollama_response.response);
             document.getElementById("skill").textContent = result.ollama_response.response 
             // alert("Data sent successfully! For Skill and projects");
+
+            skillLoader.style.display ='none';
+            skillContent.classList.remove("content-hidden");
+
             
 
             } catch (error) {
@@ -377,7 +401,7 @@ console.log("formData: ",formData);
                 alert("An error occurred while sending data to the FastAPI server for Skill and projects.");
             }
 
-             loader.style.display = 'none';
+            //  loader.style.display = 'none';
 }
 
 resume_creation_from_mongodb_data()

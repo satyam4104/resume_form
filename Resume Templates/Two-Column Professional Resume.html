@@ -76,7 +76,8 @@
             <p id="location"></p>
             <!-- <p><a href="https://linkedin.com/in/janesmith" style="color: #fff;">LinkedIn</a></p> -->
             <h3>Skills and Projects</h3>
-            <ul id="skill">
+            <div class="spinner-loader" id="skill-loader" aria-label="Loading skill"></div>
+            <ul id="skill" class="content-hidden"></ul>
                 <!-- <li>Python, R, SQL</li>
                 <li>Machine Learning, TensorFlow</li>
                 <li>Data Visualization, Tableau</li> -->
@@ -92,7 +93,9 @@
             <ul id="work" class="content-hidden"></ul>
             
             <h2>Education</h2>
-            <ul id="education">
+            <div class="spinner-loader" id="education-loader" aria-label="Loading education"></div>
+            <ul id="education" class="content-hidden"></ul>
+
                 <!-- <li>
                     <strong>M.S. in Data Science, Stanford University</strong> — Stanford, CA<br>
                     Graduated: May 2018
@@ -100,11 +103,11 @@
             </ul>
         </div>
 
-    <!-- Loader container -->
+    <!-- Loader container
     <div class="loader-overlay">
         <div class="loader"></div>
     </div>
-    
+     -->
     </div>
     <script src="resume1.js"></script>
 </body>
