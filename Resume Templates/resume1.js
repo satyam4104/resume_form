@@ -74,7 +74,7 @@
         const result = await response.json();
         console.log("Response from server for summary: ", result);
         console.log("Response from ollama for summary: ", result.ollama_response.response);
-        document.getElementById("Summary").textContent = result.ollama_response.response 
+        document.getElementById("Summary").textContent = result.ollama_response.response ;
         // alert("Data sent successfully! For summary");
         
 
@@ -285,9 +285,12 @@ console.log("formData: ",formData);
 
         
         const result = await response.json();
+        const data = result.ollama_response.response;
+
+        let htmloutput = marked.parse(data);
         console.log("Response from server for summary: ", result);
         console.log("Response from ollama for summary: ", result.ollama_response.response);
-        document.getElementById("Summary").textContent = result.ollama_response.response 
+        document.getElementById("Summary").innerHTML = htmloutput;
 
         // Update content and hide loaders
         summaryLoader.style.display = 'none';
@@ -317,9 +320,13 @@ console.log("formData: ",formData);
             }
 
             const result = await response.json();
+            const data = result.ollama_response.response;
+
+            let htmloutput = marked.parse(data);
+            
             console.log("Response from server for work experience: ", result);
             console.log("Response from ollama for work experience: ", result.ollama_response.response);
-            document.getElementById("work").textContent = result.ollama_response.response 
+            document.getElementById("work").innerHTML = htmloutput
             // alert("Data sent successfully! For work experience");
             
             workLoader.style.display = 'none';
@@ -351,9 +358,13 @@ console.log("formData: ",formData);
             }
 
             const result = await response.json();
+            const data = result.ollama_response.response;
+
+            let htmloutput = marked.parse(data);
+
             console.log("Response from server for education: ", result);
             console.log("Response from ollama for education: ", result.ollama_response.response);
-            document.getElementById("education").textContent = result.ollama_response.response 
+            document.getElementById("education").innerHTML = htmloutput
             // alert("Data sent successfully! For education");
 
             educationLoader.style.display ="none";
@@ -386,9 +397,13 @@ console.log("formData: ",formData);
             }
 
             const result = await response.json();
+            const data = result.ollama_response.response;
+
+            let htmloutput = marked.parse(data);
+
             console.log("Response from server for Skill and projects: ", result);
             console.log("Response from ollama for Skill and projects: ", result.ollama_response.response);
-            document.getElementById("skill").textContent = result.ollama_response.response 
+            document.getElementById("skill").innerHTML = htmloutput 
             // alert("Data sent successfully! For Skill and projects");
 
             skillLoader.style.display ='none';
