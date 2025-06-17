@@ -30,6 +30,10 @@ app.add_middleware(
     allow_headers = ["*"]
 )
 
+
+model = 'llama3.2:1b'
+# model = 'mistral:7b'
+
 @app.post("/transfer")
 
 async def SendData( data: ResumeFormData):
@@ -45,9 +49,9 @@ async def SendData( data: ResumeFormData):
 
 async def summary(data: ResumeFormData):
     url = "http://127.0.0.1:11434/api/generate"
-    prompt = f"Define professional summary in few line of provide information. The given information are: Name: {data.name}, Education: {data.education}, work experience: {data.experience}, Skills:{data.skill}."
+    prompt = f"Define professional summary in few line of provide information. The given information are: Name: {data.name}, Education: {data.education}, work experience: {data.experience}, Skills:{data.skill}. Provide summary only."
     payload = {
-        "model" :"llama3.2:1b",
+        "model" : model,
         "prompt" : prompt,
         "stream" : False
     }
@@ -64,9 +68,9 @@ async def summary(data: ResumeFormData):
 
 async def summary(data: ResumeFormData):
     url = "http://127.0.0.1:11434/api/generate"
-    prompt = f"Generate a work experience summary to fit in resume format from provided information. The given information are: work experience: {data.experience}, Skills:{data.skill}."
+    prompt = f"Generate a work experience summary to fit in resume format from provided information. The given information are: work experience: {data.experience}, Skills:{data.skill}. Provide summary only."
     payload = {
-        "model" :"llama3.2:1b",
+        "model" : model,
         "prompt" : prompt,
         "stream" : False
     }
@@ -84,9 +88,9 @@ async def summary(data: ResumeFormData):
 
 async def summary(data: ResumeFormData):
     url = "http://127.0.0.1:11434/api/generate"
-    prompt = f"Define summary in resume format for education details. The given education details are: Name: {data.name}, Education: {data.education}."
+    prompt = f"Define summary in resume format for education details. The given education details are: Name: {data.name}, Education: {data.education}. Provide summary only."
     payload = {
-        "model" :"llama3.2:1b",
+        "model" : model,
         "prompt" : prompt,
         "stream" : False
     }
@@ -103,9 +107,9 @@ async def summary(data: ResumeFormData):
 
 async def summary(data: ResumeFormData):
     url = "http://127.0.0.1:11434/api/generate"
-    prompt = f"Give summary of projects and showcase the skill develop through these projects. The given information are:  work experience: {data.experience}, Skills:{data.skill}, Projects: {data.project}."
+    prompt = f"Give summary of projects and showcase the skill develop through these projects. The given information are:  work experience: {data.experience}, Skills:{data.skill}, Projects: {data.project}. Provide summary only."
     payload = {
-        "model" :"llama3.2:1b",
+        "model" : model,
         "prompt" : prompt,
         "stream" : False
     }
