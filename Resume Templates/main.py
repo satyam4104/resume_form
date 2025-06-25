@@ -53,6 +53,7 @@ async def summary(data: ResumeFormData):
     payload = {
         "model" : model,
         "prompt" : prompt,
+        
         "stream" : False
     }
     
