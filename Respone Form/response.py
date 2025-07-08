@@ -19,7 +19,7 @@ print("Ollama embeddings initialized")
 
 # Step 2: Connect to PostgreSQL vector store
 CONNECTION_STRING = "postgresql+psycopg2://postgres:1331@localhost:5432/vector_db"
-COLLECTION_NAME = "resume_vectors"
+COLLECTION_NAME = "pdf_RAG"
 
 vector_store = PGVector(
     embedding_function=embeddings,
@@ -61,12 +61,12 @@ def query_rag(question):
     result = qa_chain.invoke({"query": question})
     return {
         "answer": result["result"],
-        "source_documents": [
-            {
-                "content": doc.page_content,
-                "metadata": json.loads(doc.metadata["full_document"])  # Parse JSON string back to dict
-            } for doc in result["source_documents"]
-        ]
+        # "source_documents": [
+        #     {
+        #         "content": doc.page_content,
+        #         "metadata": json.loads(doc.metadata["full_document"])  # Parse JSON string back to dict
+        #     } for doc in result["source_documents"]
+        # ]
     }
 
 print("hi12")
@@ -99,13 +99,13 @@ async def retrieve_data(input_data: QueryInput):
         question = input_data.query
         response = query_rag(question)
         print("Answer:", response["answer"])
-        print("\nSource Documents:")
-        for doc in response["source_documents"]:
-            print("Content:", doc["content"][:50] + "..." if len(doc["content"]) > 50 else doc["content"])
-            print("Metadata:", doc["metadata"])
+        # print("\nSource Documents:")
+        # for doc in response["source_documents"]:
+        #     print("Content:", doc["content"][:50] + "..." if len(doc["content"]) > 50 else doc["content"])
+        #     print("Metadata:", doc["metadata"])
 
 
-            return QueryResponse(
+        return QueryResponse(
                 message="Query received successfully",
                 query=input_data.query,
                 answer= response["answer"]
